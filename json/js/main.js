@@ -8,8 +8,8 @@ btn.addEventListener("click", function() {
     RequestFromRequestTool.open('GET', 'https://learnwebcode.github.io/json-example/animals-' +page+'.json');
     RequestFromRequestTool.onload =function() {
         if( RequestFromRequestTool.status >= 200 && RequestFromRequestTool.status <= 400)   console.log("server fail");
-        if( RequestFromRequestTool.status < 200)   console.log("success");
-        if( RequestFromRequestTool.status > 400)   console.log("conn fail");
+        if( RequestFromRequestTool.status < 200)   console.log("overall success");
+        if( RequestFromRequestTool.status > 400)   console.log("client fail");
         var DataFromRequest = JSON.parse(RequestFromRequestTool.responseText)
         HTML(DataFromRequest);
     }
