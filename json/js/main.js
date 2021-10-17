@@ -25,29 +25,30 @@ btn.addEventListener("click", function() {
 });
 
 function HTML(data) {
-    var html = "";
     for (i = 0; i < data.length; i++) {
-        html += "<p>" + data[i].name + ":" + data[i].species + "+ : ";
+        var html = "";
+        html += "<p>" + data[i].name + " : " + data[i].species + " + : ";
         for (j = 0; j < data[i].foods.likes.length; j++)
         {
-            if(j=0){
+            if(j == 0){
                 html += data[i].foods.likes[j];
             }
             else {
                 html += " and " + data[i].foods.likes[j];
             }
         }
-        html += " - :" ;
-        for (j = 0; j < data[i].foods.dislikes.length; j++)
+            html += " - :" ;
+        for (k = 0; k < data[i].foods.dislikes.length; k++)
         {
-            if(j=0){
-                html += data[i].foods.dislikes[j];
+            if(k == 0){
+                html += data[i].foods.dislikes[k];
             }
             else {
-                html += " and " + data[i].foods.dislikes[j];
+                html += " and " + data[i].foods.dislikes[k];
             }
         }
         html += ".</p>" ;
         div.insertAdjacentHTML('beforeend', html);
     }
 }
+            
